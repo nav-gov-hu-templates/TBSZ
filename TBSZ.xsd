@@ -1,0 +1,824 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:baseForm="https://soap.api.nav.gov.hu/definitions/model/2.0/baseForm/1.0"
+        xmlns:meta="https://api.nav.gov.hu/definitions/form_xsd_metaschema/1.0"
+        xmlns:tns="https://soap.api.nav.gov.hu/definitions/model/2.0/TBSZ/1.0"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        targetNamespace="https://soap.api.nav.gov.hu/definitions/model/2.0/TBSZ/1.0">
+   <import namespace="https://api.nav.gov.hu/definitions/form_xsd_metaschema/1.0"
+           schemaLocation="form_xsd_metaschema.xsd"/>
+   <import namespace="https://soap.api.nav.gov.hu/definitions/model/2.0/baseForm/1.0"
+           schemaLocation="baseForm.xsd"/>
+   <element name="Doc_TBSZ"
+            type="tns:Doc_TBSZ_Type"
+            meta:metaType="DocMetaType">
+      <annotation>
+         <documentation>Bejelentés a külföldi szolgáltatónál nyitott tartós befektetési számláról</documentation>
+      </annotation>
+      <xs:unique name="uniqueFileId_Attachment_1">
+         <xs:selector xpath="Form_TBSZ/Attachment_1"/>
+         <xs:field xpath="fileId"/>
+      </xs:unique>
+   </element>
+   <complexType name="Doc_TBSZ_Type">
+      <annotation>
+         <documentation>A teljes bizonylat szerkezetet leíró típus</documentation>
+      </annotation>
+      <sequence>
+         <element name="Form_TBSZ"
+                  type="tns:Form_TBSZ_Type"
+                  minOccurs="1"
+                  maxOccurs="1"
+                  meta:metaType="FormMetaType">
+            <annotation>
+               <documentation>TBSZ részbizonylat</documentation>
+            </annotation>
+         </element>
+      </sequence>
+   </complexType>
+   <simpleType name="Enum_TBSZ_egyseges_orszagkodok_MOnelkul_2">
+      <annotation>
+         <documentation>Enum értékek egyseges_orszagkodok_MOnelkul mátrix 2. oszlopból.</documentation>
+      </annotation>
+      <restriction base="xs:string">
+         <enumeration value="Andorra"/>
+         <enumeration value="Egyesült Arab Emírségek"/>
+         <enumeration value="Afganisztán"/>
+         <enumeration value="Antigua"/>
+         <enumeration value="Anguilla"/>
+         <enumeration value="Albánia"/>
+         <enumeration value="Örményország"/>
+         <enumeration value="Angola"/>
+         <enumeration value="Antarktisz"/>
+         <enumeration value="Argentína"/>
+         <enumeration value="Amerikai Szamoa"/>
+         <enumeration value="Ausztria"/>
+         <enumeration value="Ausztrália"/>
+         <enumeration value="Aruba"/>
+         <enumeration value="Aaland szigetek"/>
+         <enumeration value="Azerbajdzsán"/>
+         <enumeration value="Bosznia-Hercegovina"/>
+         <enumeration value="Barbados"/>
+         <enumeration value="Banglades"/>
+         <enumeration value="Belgium"/>
+         <enumeration value="Burkina Faso"/>
+         <enumeration value="Bulgária"/>
+         <enumeration value="Bahrain"/>
+         <enumeration value="Burundi"/>
+         <enumeration value="Benin"/>
+         <enumeration value="Saint Barthélémy"/>
+         <enumeration value="Bermuda"/>
+         <enumeration value="Brunei"/>
+         <enumeration value="Bolívia"/>
+         <enumeration value="Bonaire"/>
+         <enumeration value="Brazília"/>
+         <enumeration value="Bahama-szigetek Nassau"/>
+         <enumeration value="Bhután"/>
+         <enumeration value="Bouvet-sziget"/>
+         <enumeration value="Botswana"/>
+         <enumeration value="Fehéroroszország"/>
+         <enumeration value="Belize"/>
+         <enumeration value="Kanada"/>
+         <enumeration value="Kókusz (Keeling)-szigetek"/>
+         <enumeration value="Kongói Demokratikus Köztársaság"/>
+         <enumeration value="Közép-Afrikai Köztársaság"/>
+         <enumeration value="Kongó"/>
+         <enumeration value="Svájc"/>
+         <enumeration value="Elefántcsontpart"/>
+         <enumeration value="Cook-szigetek"/>
+         <enumeration value="Chile"/>
+         <enumeration value="Kamerun"/>
+         <enumeration value="Kína"/>
+         <enumeration value="Kolumbia"/>
+         <enumeration value="Costa Rica"/>
+         <enumeration value="Kuba"/>
+         <enumeration value="Zöldfoki Köztársaság"/>
+         <enumeration value="Curacao"/>
+         <enumeration value="Karácsony-sziget"/>
+         <enumeration value="Ciprus"/>
+         <enumeration value="Csehország"/>
+         <enumeration value="Németország"/>
+         <enumeration value="Dzsibuti"/>
+         <enumeration value="Dánia"/>
+         <enumeration value="Dominika"/>
+         <enumeration value="Dominikai Köztársaság"/>
+         <enumeration value="Algéria"/>
+         <enumeration value="Equador"/>
+         <enumeration value="Észtország"/>
+         <enumeration value="Egyiptom"/>
+         <enumeration value="Nyugat-Szahara"/>
+         <enumeration value="Eritrea"/>
+         <enumeration value="Spanyolország"/>
+         <enumeration value="Etiópia"/>
+         <enumeration value="Finnország"/>
+         <enumeration value="Fidzsi-szigetek"/>
+         <enumeration value="Falkland-szigetek"/>
+         <enumeration value="Mikronézia"/>
+         <enumeration value="Faroe szigetek"/>
+         <enumeration value="Franciaország"/>
+         <enumeration value="France, metropolitan"/>
+         <enumeration value="Gabon"/>
+         <enumeration value="Egyesült Királyság (Nagy Britannia)"/>
+         <enumeration value="Grenada"/>
+         <enumeration value="Grúzia"/>
+         <enumeration value="Francia Guiana"/>
+         <enumeration value="Guernsey"/>
+         <enumeration value="Ghana"/>
+         <enumeration value="Gibraltár"/>
+         <enumeration value="Grönland"/>
+         <enumeration value="Gambia"/>
+         <enumeration value="Guinea"/>
+         <enumeration value="Guadeloupe"/>
+         <enumeration value="Egyenlítői Guinea"/>
+         <enumeration value="Görögország"/>
+         <enumeration value="Déli-Georgia és Déli-Sandwich-szigetek"/>
+         <enumeration value="Guatemala"/>
+         <enumeration value="Guam"/>
+         <enumeration value="Bissau-Guinea"/>
+         <enumeration value="Guyana"/>
+         <enumeration value="Hongkong"/>
+         <enumeration value="Heard-sziget és McDonalds-szigetek"/>
+         <enumeration value="Honduras"/>
+         <enumeration value="Horvátország"/>
+         <enumeration value="Haiti"/>
+         <enumeration value="Indonézia"/>
+         <enumeration value="Írország"/>
+         <enumeration value="Izrael"/>
+         <enumeration value="Man sziget"/>
+         <enumeration value="India"/>
+         <enumeration value="Brit Indiai-Óceániai Terület"/>
+         <enumeration value="Irak"/>
+         <enumeration value="Irán"/>
+         <enumeration value="Izland"/>
+         <enumeration value="Olaszország"/>
+         <enumeration value="Jersey"/>
+         <enumeration value="Jamaica"/>
+         <enumeration value="Jordánia"/>
+         <enumeration value="Japán"/>
+         <enumeration value="Kenya"/>
+         <enumeration value="Kirgizisztán"/>
+         <enumeration value="Kambodzsa"/>
+         <enumeration value="Kiribati Köztársaság Tuvalu"/>
+         <enumeration value="Comore-szigetek"/>
+         <enumeration value="Saint Christopher és Nevis"/>
+         <enumeration value="Koreai NDK"/>
+         <enumeration value="Dél Korea "/>
+         <enumeration value="Kuwait"/>
+         <enumeration value="Kajmán-szigetek"/>
+         <enumeration value="Kazahsztán"/>
+         <enumeration value="Laosz"/>
+         <enumeration value="Libanon"/>
+         <enumeration value="Saint Lucia"/>
+         <enumeration value="Liechtenstein"/>
+         <enumeration value="Sri Lanka"/>
+         <enumeration value="Liberia"/>
+         <enumeration value="Lesotho"/>
+         <enumeration value="Litvánia"/>
+         <enumeration value="Luxemburg"/>
+         <enumeration value="Lettország"/>
+         <enumeration value="Líbia"/>
+         <enumeration value="Marokkó"/>
+         <enumeration value="Monaco"/>
+         <enumeration value="Moldova"/>
+         <enumeration value="Montenegro"/>
+         <enumeration value="Saint Martin"/>
+         <enumeration value="Malgas Köztársaság"/>
+         <enumeration value="Marshall-szigetek"/>
+         <enumeration value="Észak-Macedónia"/>
+         <enumeration value="Mali"/>
+         <enumeration value="Mianmar"/>
+         <enumeration value="Mongólia"/>
+         <enumeration value="Macao"/>
+         <enumeration value="Északi-Mariana-szigetek"/>
+         <enumeration value="Martinique"/>
+         <enumeration value="Mauritania"/>
+         <enumeration value="Montserrat"/>
+         <enumeration value="Málta"/>
+         <enumeration value="Mauritius"/>
+         <enumeration value="Maldív-szigetek"/>
+         <enumeration value="Malawi"/>
+         <enumeration value="Mexikó"/>
+         <enumeration value="Malajzia"/>
+         <enumeration value="Mozambik"/>
+         <enumeration value="Namíbia"/>
+         <enumeration value="Új-Kaledónia"/>
+         <enumeration value="Niger"/>
+         <enumeration value="Norfolk szigetek"/>
+         <enumeration value="Nigéria"/>
+         <enumeration value="Nicaragua"/>
+         <enumeration value="Hollandia"/>
+         <enumeration value="Norvégia"/>
+         <enumeration value="Nepál"/>
+         <enumeration value="Nauru"/>
+         <enumeration value="Niue"/>
+         <enumeration value="Új-Zéland"/>
+         <enumeration value="Omán"/>
+         <enumeration value="Panama"/>
+         <enumeration value="Peru"/>
+         <enumeration value="Francia Polinézia"/>
+         <enumeration value="Pápua Új-Ginea"/>
+         <enumeration value="Fülöp-szigetek"/>
+         <enumeration value="Pakisztán"/>
+         <enumeration value="Lengyelország"/>
+         <enumeration value="Saint Pierre és Miquelon"/>
+         <enumeration value="Pitcairn-sziget"/>
+         <enumeration value="Puerto Rico"/>
+         <enumeration value="Palesztína"/>
+         <enumeration value="Portugália"/>
+         <enumeration value="Palau"/>
+         <enumeration value="Paraguay"/>
+         <enumeration value="Quatar"/>
+         <enumeration value="Reunion"/>
+         <enumeration value="Románia"/>
+         <enumeration value="Szerbia"/>
+         <enumeration value="Oroszország"/>
+         <enumeration value="Ruanda"/>
+         <enumeration value="Szaud-Arábia"/>
+         <enumeration value="Solomon-szigetek"/>
+         <enumeration value="Seychelle-szigetek"/>
+         <enumeration value="Szudán"/>
+         <enumeration value="Svédország"/>
+         <enumeration value="Szingapúr"/>
+         <enumeration value="Szent Ilona"/>
+         <enumeration value="Szlovénia"/>
+         <enumeration value="Svalbard és Jan Mayen"/>
+         <enumeration value="Szlovákia"/>
+         <enumeration value="Sierra Leone"/>
+         <enumeration value="San Marino"/>
+         <enumeration value="Szenegál"/>
+         <enumeration value="Szomália"/>
+         <enumeration value="Suriname"/>
+         <enumeration value="Dél-Szudán"/>
+         <enumeration value="Sao Tome és Principe"/>
+         <enumeration value="Salvador"/>
+         <enumeration value="St. Maarten "/>
+         <enumeration value="Szíria"/>
+         <enumeration value="Szváziföld"/>
+         <enumeration value="Turks- és Caicos-szigetek"/>
+         <enumeration value="Csád"/>
+         <enumeration value="Francia Déli Területek"/>
+         <enumeration value="Togo"/>
+         <enumeration value="Thaiföld"/>
+         <enumeration value="Tadzsikisztán"/>
+         <enumeration value="Tokelau-szigetek"/>
+         <enumeration value="Kelet-Timor"/>
+         <enumeration value="Türkmenisztán"/>
+         <enumeration value="Tunézia"/>
+         <enumeration value="Tonga"/>
+         <enumeration value="Törökország"/>
+         <enumeration value="Trinidad és Tobago"/>
+         <enumeration value="Tuvalu"/>
+         <enumeration value="Taiwan"/>
+         <enumeration value="Tanzánia"/>
+         <enumeration value="Ukrajna"/>
+         <enumeration value="Uganda"/>
+         <enumeration value="Amerikai Csendes-óceáni-Szigetek"/>
+         <enumeration value="Amerikai Egyesült Államok"/>
+         <enumeration value="Uruguay"/>
+         <enumeration value="Üzbegisztán"/>
+         <enumeration value="Vatikán"/>
+         <enumeration value="Saint Vincent és Grenadines"/>
+         <enumeration value="Venezuela"/>
+         <enumeration value="Brit Virgin-szigetek"/>
+         <enumeration value="Amerikai Virgin-szigetek"/>
+         <enumeration value="Vietnámi Köztársaság"/>
+         <enumeration value="Vanuatu"/>
+         <enumeration value="Gáza és Jerikó"/>
+         <enumeration value="Wallis és Futuna"/>
+         <enumeration value="Nyugat-Szamoa"/>
+         <enumeration value="Koszovó"/>
+         <enumeration value="Jemeni Arab Köztársaság"/>
+         <enumeration value="Mayotte"/>
+         <enumeration value="Dél-Afrikai Köztársaság"/>
+         <enumeration value="Zambia"/>
+         <enumeration value="Zimbabwe"/>
+      </restriction>
+   </simpleType>
+   <simpleType name="Enum_TBSZ_egyseges_titulus_1">
+      <annotation>
+         <documentation>Enum értékek egyseges_titulus mátrix 1. oszlopból.</documentation>
+      </annotation>
+      <restriction base="xs:string">
+         <enumeration value="Dr."/>
+         <enumeration value="Dr.Dr."/>
+         <enumeration value="Id."/>
+         <enumeration value="Id.Dr."/>
+         <enumeration value="Ifj."/>
+         <enumeration value="Ifj.Dr."/>
+         <enumeration value="Özv."/>
+         <enumeration value="Özv.Dr."/>
+         <enumeration value="Prof."/>
+         <enumeration value="Dr.Pr."/>
+         <enumeration value="Pr.Dr."/>
+         <enumeration value="Dr.Habil."/>
+      </restriction>
+   </simpleType>
+   <complexType name="Form_TBSZ_Type">
+      <annotation>
+         <documentation>A teljes nyomtatvány TBSZ részbiztonylatának szerkezetét leíró típus.</documentation>
+      </annotation>
+      <sequence>
+         <element name="Block_120001"
+                  type="tns:Block_TBSZ_120001_Type"
+                  minOccurs="0"
+                  meta:metaType="BlockMetaType">
+            <annotation>
+               <documentation>Azonosító adatok</documentation>
+            </annotation>
+         </element>
+         <element name="Attachment_1"
+                  type="baseForm:AttachmentType"
+                  minOccurs="0"
+                  maxOccurs="unbounded"
+                  meta:metaType="AttachmentMetaType">
+            <annotation>
+               <documentation>KVKPELL; File Extensions:PDF</documentation>
+            </annotation>
+         </element>
+      </sequence>
+   </complexType>
+   <complexType name="Block_TBSZ_120001_Type">
+      <annotation>
+         <documentation>Azonosító adatok</documentation>
+      </annotation>
+      <all>
+         <element name="FieldGroup_120002"
+                  type="tns:FieldGroup_TBSZ_120002_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Adózó adatai</documentation>
+            </annotation>
+         </element>
+         <element name="FieldGroup_120022"
+                  type="tns:FieldGroup_TBSZ_120022_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Ügyintéző adatai</documentation>
+            </annotation>
+         </element>
+         <element name="FieldGroup_120004"
+                  type="tns:FieldGroup_TBSZ_120004_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Bejelentést kitöltő adatai</documentation>
+            </annotation>
+         </element>
+         <element name="Chain_120006"
+                  type="tns:Chain_TBSZ_120006_Type"
+                  minOccurs="0"
+                  meta:metaType="ChainMetaType">
+            <annotation>
+               <documentation>Tartós befektetési számlához kapcsolódó adatok</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="Chain_TBSZ_120006_Type">
+      <annotation>
+         <documentation>Tartós befektetési számlához kapcsolódó adatok</documentation>
+      </annotation>
+      <sequence>
+         <element name="Chain_elem" minOccurs="0" maxOccurs="99">
+            <annotation>
+               <documentation>Lánc ismétlődő elemei</documentation>
+            </annotation>
+            <complexType>
+               <sequence>
+                  <element name="FieldGroup_120007"
+                           type="tns:FieldGroup_TBSZ_120007_Type"
+                           minOccurs="1"
+                           meta:metaType="FieldGroupMetaType">
+                     <annotation>
+                        <documentation>Tartós befektetési számlához kapcsolódó adatok</documentation>
+                     </annotation>
+                  </element>
+               </sequence>
+            </complexType>
+         </element>
+      </sequence>
+   </complexType>
+   <complexType name="FieldGroup_TBSZ_120002_Type">
+      <annotation>
+         <documentation>Adózó adatai</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0A0001E001A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Adóazonosító jele (adóazonosító)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="10"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E002A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Titulusa (adózó_titulus)</documentation>
+            </annotation>
+            <simpleType>
+               <union memberTypes="tns:Enum_TBSZ_egyseges_titulus_1">
+                  <simpleType>
+                     <restriction base="string">
+                        <minLength value="1"/>
+                        <maxLength value="20"/>
+                        <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+                     </restriction>
+                  </simpleType>
+               </union>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E003A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Családi neve (adózó_családi_neve)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="40"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E004A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Utóneve (adózó_utóneve)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="40"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E005A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Anyja születési családi neve (anyja_családi_neve)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="40"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E006A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>utóneve (anyja_utóneve)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="40"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E007A"
+                  minOccurs="0"
+                  type="xs:date"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Születési ideje (születési_idő)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001E008A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Születési helye (születési_helye)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="80"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E009A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Címe ¦ Külföldi cím (adózó_külf_cím)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001E010A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Címe ¦ Ország (adózó_ország)</documentation>
+            </annotation>
+            <simpleType>
+               <union memberTypes="tns:Enum_TBSZ_egyseges_orszagkodok_MOnelkul_2">
+                  <simpleType>
+                     <restriction base="string">
+                        <minLength value="1"/>
+                        <maxLength value="80"/>
+                        <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+                     </restriction>
+                  </simpleType>
+               </union>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E011A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Címe ¦ Irányítószám (adózó_irányitószám)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="9"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E012A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Címe ¦ Város/község (adózó_város)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="80"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E013A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Címe ¦ Közterület neve (adózó_közter_név)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="40"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E014A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Címe ¦ Jellege (adózó_közter_jelleg)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="20"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E015A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Címe ¦ Házszám (adózó_hsz)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="15"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E016A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Címe ¦ Épület (adózó_ép)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="6"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E017A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Címe ¦ Lépcsőház (adózó_lh)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="6"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E018A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Címe ¦ Emelet (adózó_em)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="6"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E019A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Címe ¦ Ajtó (adózó_ajtó)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="6"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001A00500A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Számított mező, tartalma kalkulációval (vagy XPath futtatással) kerül meghatározásra. ¦ (stat_bekuldes_modja)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="1"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_TBSZ_120022_Type">
+      <annotation>
+         <documentation>Ügyintéző adatai</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0A0001E020A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Neve (Ügyintéző_neve)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="80"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E021A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Telefonszáma (Ügyintéző_telefon)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="40"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_TBSZ_120004_Type">
+      <annotation>
+         <documentation>Bejelentést kitöltő adatai</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0A0001F007A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Meghatalmazott, képviselő neve (törvényeskép_név)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="80"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001F008A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Meghatalmazott, képviselő adóazonosító száma (törvényeskép_azonosító)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="11"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001F003A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Állami adó- és vámhatósághoz bejelentett, a bejelentés aláírására jogosult állandó meghatalmazás jelölése (állandómeghatalmazott)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001F004A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Eseti meghatalmazás csatolásának jelölése (esetimeghatalmazás)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001F005A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Állami adó- és vámhatósághoz bejelentett pénzügyi képviselő jelölése (pénzügyiképviselő)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001F006A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Állami adó- és vámhatósághoz bejelentett törvényes képviselő jelölése (törvényesképviselő)</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_TBSZ_120007_Type">
+      <annotation>
+         <documentation>Tartós befektetési számlához kapcsolódó adatok</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0BXXXXC001A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Szerződéskötés esetén befizetett pénzösszeg értéke (szerződéskötés_érték)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="80"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0BXXXXC002A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Lekötési átutalás esetén átutalt pénzügyi eszközök, pénzösszeg értéke (átutalás_érték)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="80"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+      </all>
+   </complexType>
+</schema>
